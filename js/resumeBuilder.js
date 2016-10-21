@@ -75,7 +75,7 @@ var projects = {
 }
 
 var bio = {
-    "name": "Gowtham",
+    "name": "Gowtham Ravi",
     "role": "web-developer",
     "contacts": {
         "mobile": "+918012727006",
@@ -146,7 +146,7 @@ function displaywork() {
 
 }
 displaywork();
-
+// the location displayfunction
 $(document).click(function(loc) {
 
   var x = loc.pageX;
@@ -155,6 +155,18 @@ $(document).click(function(loc) {
   logClicks(x,y);
   // your code goes here!
 });
+//the internationalizeButton function
+function inName(name) {
+    name = name.trim().split(" ");
+    console.log(name);
+    name[0]= name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+    name[1] = name[1].toUpperCase();
+    return name[0] +" "+name[1];
+
+}
+
+$("#main").append(internationalizeButton);
+
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
