@@ -146,6 +146,15 @@ function displaywork() {
 
 }
 displaywork();
+
+$(document).click(function(loc) {
+
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y);
+  // your code goes here!
+});
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
