@@ -38,6 +38,13 @@ education.city = "ooty";
 $("#main").append(work["position"]);
 $("#main").append(education.school);*/
 
+// TODO:
+/*APPEND THE HTMLcontactGeneric AND THE BIOPIC ETC..
+CHANGE FOR  IN LOOP TO FOR LOOP
+ADD FOR LOOP FOR DISPLAYING SKILLS AT A GLANCE
+ENCAPSULATE THE FUNCTIONS
+ADD GOOGLE MAP TO RESUME
+CUSTOMIZE THE RESUME */
 var work = {
     "jobs": [{
         "employer": "Ravi garments",
@@ -166,6 +173,29 @@ function inName(name) {
 }
 
 $("#main").append(internationalizeButton);
+
+//map
+$("#mapDiv").append(googleMap);
+
+
+//displayproject function encapsulation
+projects.display = function(){
+    for(var i=0;i<projects.projects.length;i++) {
+           $("#projects").append(HTMLprojectStart);
+            var formattedTitle = HTMLprojectTitle.replace("%data%",projects.projects[i].title);
+                         $(".project-entry:last").append(formattedTitle);
+             var formattedDates = HTMLprojectDates.replace("%data%",projects.projects[i].dates);
+                        $(".project-entry:last").append(formattedDates);
+            var formattedDescription = HTMLprojectDescription.replace("%data%",projects.projects[i].description);
+                         $(".project-entry:last").append(formattedDescription);
+             var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[i].images);
+                         $(".project-entry:last").append(formattedImage);
+
+    }
+
+}
+projects.display();
+
 
 /*
 This is empty on purpose! Your code to build the resume will go here.
