@@ -112,27 +112,42 @@ var education = {
     }]
 }
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", "web-developer");
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+//end of json
+//functions to display work,project,bio ..
 
-if (bio.skills.length >0) {
+bio.display = function() {
 
-    $("#header").append(HTMLskillsStart);
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%", "web-developer");
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName);
+        var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
+        $("#topContacts").append(formattedMobile);
+        var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+        $("#topContacts").append(formattedEmail);
+        var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+        $("#topContacts").append(formattedGithub);
+         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+        $("#topContacts").append(formattedLocation);
+        var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+        $("#header").append(formattedWelcomeMessage);
+        var formattedBiopic = HTMLbioPic.replace("%data%",bio.biopic);
+        $("#header").append(formattedBiopic);
 
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-    $("#skills").append(formattedSkill);
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-    $("#skills").append(formattedSkill);
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-    $("#skills").append(formattedSkill);
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-    $("#skills").append(formattedSkill);
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
-    $("#skills").append(formattedSkill);
+  if (bio.skills.length >0) {
+      $("#header").append(HTMLskillsStart);
 
+    for (var i=0;i<bio.skills.length;i++){
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(formattedSkill);
+    }
 }
+}
+bio.display();//bio.display fn functional..
+
+
+
+
 
 function displaywork() {
 
