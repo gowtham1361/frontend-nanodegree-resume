@@ -39,22 +39,20 @@ $("#main").append(work["position"]);
 $("#main").append(education.school);*/
 
 // TODO:
-/*
-CHANGE FOR  IN LOOP TO FOR LOOP
-ENCAPSULATE THE FUNCTIONS
-ADD GOOGLE MAP TO RESUME
-CUSTOMIZE THE RESUME */
+
+
+//CUSTOMIZE THE RESUME
 var work = {
     "jobs": [{
         "employer": "Ravi garments",
-        "title": "qualitychecker",
+        "title": "Quality Checker",
         "location": "Tirupur",
         "dates": "2015-2016",
-        "description": "The clothings produced have to be checked for any defects like  wrongprint, damages"
+        "description": "The clothings produced have to be checked for any defects like  wrongprint, damages.The pieces that are defective are rejected and are not exported.These rejected pieces are sold in the local market for a lower cost."
     },
     {
         "employer": "infosys",
-        "title": "system-engineer",
+        "title": "System Engineer",
         "location": "Bangalore",
         "dates": "2016-2017",
         "description": "not yet working will be updated soon"
@@ -65,17 +63,17 @@ var projects = {
     "projects": [{
         "title": "animal trading card ",
         "dates": "2016 sep",
-        "description": "mocking a trading card",
+        "description": "Mocking a trading card using the given html framework.This was mainly developing the css of the trading card.I made a trading card of Cheetah.",
         "images": []
     }, {
         "title": "portfolio project",
         "dates": "2016 oct",
-        "description": "a portfolio site of myself",
-        "images": []
+        "description": "A portfolio site of myself having links to my projects done till now.This was developed as part of my front-end-web-developer-nanodegree--nd001.I completed it with the help of html,css and bootstrap. ",
+        "images": ["images/Cheetah.jpg","images/horses-small.jpg","images/portfolio.jpg"]
     }, {
-        "title": "polymer composite",
+        "title": "Polymer Composite",
         "dates": "2016 may",
-        "description": "a polymer composite with graphite as reinforcement",
+        "description": "A polymer composite with graphite as reinforcement.this was done as my final year project.The polymer composite produced has a high tensile strength and low compression strength. The density of the composite is very less comparatively , it can be used as in automotive and aerospace industry to make low density frictional parts.",
         "images": []
     }]
 }
@@ -90,14 +88,14 @@ var bio = {
         "location": "Tirupur TN INDIA"
     },
     "skills": ["chilledout", "teamplayer", "programming", "html", "css"],
-    "welcomeMessage": "welcome to my online resume",
+    "welcomeMessage": "welcome to my online resume an interactive one!",
     "biopic": "images/fry.jpg"
 }
 
 var education = {
     "schools": [{
         "name": "Amrita school of Engineering",
-        "city": "Bangalore",
+        "location": "Bangalore",
         "degree": "B.Tech",
         "major": ["mechanical"],
         "dates": "2012-2016",
@@ -145,8 +143,11 @@ education.display = function() {
         $(".education-entry:last").append(formattedNameDegree);
         var formattedDates = HTMLschoolDates.replace("%data%",education.schools[i].dates);
         $(".education-entry:last").append(formattedDates);
-        var formattedLocation = HTMLschoolLocation.replace("%data%",education.schools[i].city);
+        var formattedLocation = HTMLschoolLocation.replace("%data%",education.schools[i].location);
         $(".education-entry:last").append(formattedLocation);
+        var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[i].major);
+        $(".education-entry:last").append(formattedMajor);
+
 
     }
 
@@ -234,10 +235,17 @@ projects.display = function(){
                         $(".project-entry:last").append(formattedDates);
             var formattedDescription = HTMLprojectDescription.replace("%data%",projects.projects[i].description);
                          $(".project-entry:last").append(formattedDescription);
-             var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[i].images);
+
+    if(projects.projects[i].images.length > 0) {
+
+            for(var j=0;j<projects.projects[i].images.length;j++) {
+
+                var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[i].images[j]);
                          $(".project-entry:last").append(formattedImage);
 
+        }
     }
+  }
 
 }
 projects.display();
@@ -265,8 +273,6 @@ $("#main").append(internationalizeButton);
 
 //map
 $("#mapDiv").append(googleMap);
-
-
 
 
 /*

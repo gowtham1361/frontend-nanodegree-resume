@@ -34,7 +34,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #fb3e10;
   line-height: 29px;
   padding: 10px;
 }
@@ -42,7 +42,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #170503;
   line-height: 22px;
 }
 
@@ -81,7 +81,7 @@ h5 {
 
 p {
   font-size: 14px;
-  color: #333;
+  color: #1f211e;
   line-height: 21px;
 }
 
@@ -95,7 +95,7 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
+  color: #40f436;
   line-height: 28px;
 }
 
@@ -129,7 +129,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #2d2a2a;
 }
 
 .flex-box {
