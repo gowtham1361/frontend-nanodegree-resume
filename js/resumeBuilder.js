@@ -38,10 +38,7 @@ education.city = "ooty";
 $("#main").append(work["position"]);
 $("#main").append(education.school);*/
 
-// TODO:
 
-
-//CUSTOMIZE THE RESUME
 var work = {
     "jobs": [{
         "employer": "Ravi garments",
@@ -57,7 +54,7 @@ var work = {
         "dates": "2016-2017",
         "description": "not yet working will be updated soon"
     }]
-}
+};
 
 var projects = {
     "projects": [{
@@ -76,7 +73,7 @@ var projects = {
         "description": "A polymer composite with graphite as reinforcement.this was done as my final year project.The polymer composite produced has a high tensile strength and low compression strength. The density of the composite is very less comparatively , it can be used as in automotive and aerospace industry to make low density frictional parts.",
         "images": []
     }]
-}
+};
 
 var bio = {
     "name": "Gowtham Ravi",
@@ -90,7 +87,7 @@ var bio = {
     "skills": ["chilledout", "teamplayer", "programming", "html", "css"],
     "welcomeMessage": "welcome to my online resume an interactive one!",
     "biopic": "images/fry.jpg"
-}
+};
 
 var education = {
     "schools": [{
@@ -114,23 +111,10 @@ var education = {
         "url": "https://in.udacity.com"
     }
     ]
-}
+};
 
 //end of json
 //functions to display work,project,bio ..
-/*var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
-var HTMLschoolDates = '<div class="date-text">%data%</div>';
-var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
-
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
-var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
-*/
 
 education.display = function() {
 
@@ -154,22 +138,22 @@ education.display = function() {
     $("#education").append(HTMLonlineClasses);
     $("#education").append(HTMLschoolStart);
 
-    for(var i=0;i<education.onlineCourses.length;i++) {
+    for(i=0;i<education.onlineCourses.length;i++) {
 
 
         var formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[i].title);
         var formattedSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[i].school);
         var formattedTitleSchool = formattedTitle + formattedSchool;
         $(".education-entry:last").append(formattedTitleSchool);
-        var formattedDates = HTMLonlineDates.replace("%data%",education.onlineCourses[i].dates);
-        $(".education-entry:last").append(formattedDates);
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[i].dates);
+        $(".education-entry:last").append(formattedOnlineDates);
         var formattedUrl = HTMLonlineURL.replace("%data%",education.onlineCourses[i].url);
         $(".education-entry:last").append(formattedUrl);
 
     }
 
 
-}
+};
 education.display();
 
 //work display fn
@@ -188,7 +172,7 @@ education.display();
         $(".work-entry:last").append(formattedDescription);
 
     }
-}
+};
 work.display();
 
 //bio displayfn
@@ -219,7 +203,7 @@ bio.display = function() {
         $("#skills").append(formattedSkill);
     }
 }
-}
+};
 bio.display();//bio.display fn functional..
 
 
@@ -247,7 +231,7 @@ projects.display = function(){
     }
   }
 
-}
+};
 projects.display();
 
 // the location displayfunction
