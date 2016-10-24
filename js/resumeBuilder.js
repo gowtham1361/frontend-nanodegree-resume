@@ -94,20 +94,20 @@ var education = {
         "name": "Amrita school of Engineering",
         "location": "Bangalore",
         "degree": "B.Tech",
-        "major": ["mechanical"],
+        "majors": ["mechanical"],
         "dates": "2012-2016",
         "url": "https://www.amrita.edu"
     }],
     "onlineCourses": [{
         "title": "front end web-development",
         "school": "udacity",
-        "dates": 2016,
+        "dates": "2016",
         "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
     },
     {
         "title": "Intro to computer science",
         "school": "udacity",
-        "dates": 2016,
+        "dates": "2016",
         "url": "https://in.udacity.com"
     }
     ]
@@ -129,7 +129,7 @@ education.display = function() {
         $(".education-entry:last").append(formattedDates);
         var formattedLocation = HTMLschoolLocation.replace("%data%",education.schools[i].location);
         $(".education-entry:last").append(formattedLocation);
-        var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[i].major);
+        var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[i].majors);
         $(".education-entry:last").append(formattedMajor);
 
 
@@ -183,13 +183,13 @@ bio.display = function() {
     $("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
         var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
-        $("#topContacts").append(formattedMobile);
+        $("#topContacts, #footerContacts").append(formattedMobile);
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-        $("#topContacts").append(formattedEmail);
+        $("#topContacts, #footerContacts").append(formattedEmail);
         var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-        $("#topContacts").append(formattedGithub);
+        $("#topContacts, #footerContacts").append(formattedGithub);
          var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-        $("#topContacts").append(formattedLocation);
+        $("#topContacts, #footerContacts").append(formattedLocation);
         var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
         $("#header").append(formattedWelcomeMessage);
         var formattedBiopic = HTMLbioPic.replace("%data%",bio.biopic);
